@@ -10,9 +10,7 @@ export function Navbar() {
     return (
         <div className={`flex justify-between ${darkMode ? 'text-white bg-primary-dark' : ''} p-5`}>
             <div className="flex flex-shrink-0">
-                <Button onClick={() => {
-                    print('hello')
-                }} variant='image'>
+                <Button variant='image'>
                     <img src={logo} className={`h-auto w-[250px] ${darkMode ? '' : ''}`}/>
                 </Button>
             </div>
