@@ -1,31 +1,39 @@
-import {useState} from "react";
+import {Button} from "./Button.tsx"
 import logo from '../assets/GSJ-Logo.png'
-import {Button} from "./Button.tsx";
 import {Menu} from "lucide-react";
+import {useState} from "react";
 
 export function Navbar() {
-
-    const [darkMode] = useState(false)
+    const [showingMenu, setShowMenu] = useState(false)
 
     return (
-        <div className={`flex justify-between ${darkMode ? 'text-white bg-primary-dark' : ''} p-5`}>
-            <div className="flex flex-shrink-0">
-                <Button variant='image'>
-                    <img src={logo} className={`h-auto w-[250px] ${darkMode ? '' : ''}`}/>
-                </Button>
-            </div>
+        <div className='flex flex-col'>
+            <div className='flex justify-between items-center p-2.5 mb-5 mt-5 lg:mb-2 lg:mt-2'>
+                <div className='flex-shrink-0 h-auto w-[200px] md:w-[250px] lg:w-[300px]'>
+                    <img src={logo} alt='Testing'/>
+                </div>
 
-            <div className="sm:flex gap-5 hidden">
-                <Button variant="link">Home</Button>
-                <Button variant="link">Kontakt</Button>
-                <Button variant="link">Fotogalerie</Button>
-            </div>
-
-            <div className="flex items-center gap-5 pr-5 sm:hidden">
-                <Button variant='ghost' size='icon'>
+                <Button onClick={() => {
+                    setShowMenu(!showingMenu)
+                }} variant='ghost' size='icon' className='sm:hidden'>
                     <Menu/>
                 </Button>
+
+                <div className='hidden sm:flex'>
+                    <Button variant='link'>Home</Button>
+                    <Button variant='link'>Kontakt</Button>
+                    <Button variant='link'>Fotogalerie</Button>
+                </div>
             </div>
+
+            {showingMenu && (
+                <div
+                    className='sm:hidden flex flex-col items-center gap-1.5 bg-gray-400 text-white p-2.5'>
+                    <Button variant='link_bg' size='link' className='w-full'>Home</Button>
+                    <Button variant='link_bg' size='link' className='w-full'>Kontakt</Button>
+                    <Button variant='link_bg' size='link' className='w-full'>Fotogalerie</Button>
+                </div>
+            )}
         </div>
     )
 }
