@@ -12,7 +12,11 @@ export default {
                 primary: {
                     DEFAULT: colors.neutral[200],
                     dark: colors.neutral[800],
-                }
+                },
+                blue: {
+                    DEFAULT: colors.blue[500],
+                    dark: colors.blue[700],
+                },
             }
         },
     },
