@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.header {
+    @apply bg-center bg-cover bg-[url('./assets/boiler_room.png')] bg-black bg-blend-color bg-opacity-30 w-full h-dvh p-5 text-white
+}
