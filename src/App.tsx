@@ -1,7 +1,7 @@
 import {Navbar} from './components/Navbar'
 import {Header} from "./components/Header";
 import {Card} from "./components/Card.tsx";
-import {getImage} from './utils/utils.tsx';
+import {getImageHref} from "./utils/utils.tsx";
 
 function App() {
     return (
@@ -9,16 +9,17 @@ function App() {
             <Navbar/>
             <Header/>
 
-            {/*<div className="flex flex-col items-center pt-5 gap-5 bg-[#2F2F2F] text-white">*/}
-            {/*    <h1 className='font-bold text-2xl'>Naše Reference</h1>*/}
-            {/*    <div className="lg:flex gap-10 justify-between">*/}
-            {/*        <Card name='PFUK Kotelna' image={getImage('kotelna1', 'jpeg')}/>*/}
-            {/*        <Card name='Administrativní Budova Na Pankráci 30' image={getImage('kotelna2', 'jpg')}/>*/}
-            {/*        <Card name='Kotelna Vápenná' image={getImage('kotelna3', 'jpg')}/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            <div className='flex flex-col pt-5 bg-[#2F2F2F] text-white gap-10'>
+                <h1 className='text-3xl font-bold text-center'>Naše práce</h1>
+                <div className='flex flex-col md:flex-row md:justify-center md:gap-5'>
+                    <Card name='PFUK Kotelna' image={getImageHref('kotelna1', 'jpeg')}/>
+                    <Card name='PFUK Kotelna' image={getImageHref('kotelna2', 'jpg')}/>
+                    <Card name='PFUK Kotelna' image={getImageHref('kotelna3', 'jpg')}/>
+                </div>
+            </div>
+            
         </>
-    )
+    );
 }
 
 export default App

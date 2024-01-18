@@ -1,10 +1,8 @@
-import {getImage} from "../utils/utils.tsx";
-
 export function Header() {
     return (
         <div
             className={`flex flex-col w-full h-[600px] items-center justify-center p-7 gap-2.5 
-            text-center bg-cover bg-center bg-[url('${getImage('autogen', 'jpg')}')] 
+            text-center bg-cover bg-center bg-[url('./assets/autogen.jpg')] 
             bg-black bg-blend-color bg-opacity-40 text-white`}>
 
             <div>
