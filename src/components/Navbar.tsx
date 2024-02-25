@@ -1,11 +1,8 @@
 import logo from '../assets/GSJ-Logo-White.png'
 import {Menu} from "lucide-react";
 import {Button} from "./Button.tsx";
-import {useState} from "react";
 
 export function Navbar() {
-
-    const [showMenu, setShowMenu] = useState(false);
 
     return (
         <div className={`flex flex-col header`}>
@@ -36,19 +33,14 @@ export function Navbar() {
                 </div>
 
                 <div className='md:hidden'>
-                    <Button onClick={() => setShowMenu(!showMenu)} variant='ghost' size='icon'>
+                    <Button variant='ghost' size='icon'>
                         <Menu/>
                     </Button>
                 </div>
             </div>
 
             <div
-                className={`${showMenu ? 'h-32' : 'h-0'} transition-all delay-150 duration-300 overflow-hidden flex w-full justify-center bg-gray-500 p-2.5 rounded`}>
-                Test
-            </div>
-
-            <div
-                className='flex flex-col justify-center items-center p-[100px] gap-5 lg:gap-3 text-center mt-auto mb-auto'>
+                className='flex flex-col justify-center items-center p-5 sm:p-30 md:p-44 gap-5 lg:gap-3 text-center mt-auto mb-auto'>
                 <h1 className='font-bold text-2xl lg:text-3xl'>
                     Profesionální společnost, která se specializuje v oboru Instalatérství, Topenářství, Sváření a
                     Plynu
